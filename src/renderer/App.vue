@@ -1,9 +1,11 @@
 <template>
     <div>
         <el-button type="">按钮</el-button>
+        <img class="test" :src="require('@/assets/icon.jpg')" alt="">
     </div>
 </template>
 <script>
+
 import Vue from "vue";
 export default {
   name: "electron",
@@ -17,3 +19,9 @@ export default {
   methods: {}
 };
 </script>
+<style lang="scss" scoped>
+.test {
+    width: 100px;
+    height: 100px;
+}
+</style>
