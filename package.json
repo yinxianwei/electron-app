@@ -1,13 +1,13 @@
 {
-  "name": "x-electron-app",
-  "version": "1.0.4",
+  "name": "electron-app",
+  "version": "1.0.5",
   "license": "MIT",
   "scripts": {
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
-    "publish": "build -p always"
+    "publish": "build --mac --win -p always"
   },
   "dependencies": {
     "electron-updater": "^3.1.1",
