@@ -7,9 +7,10 @@
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
-    "start": "yarn compile && electron-builder"
+    "publish": "build -p always"
   },
   "dependencies": {
+    "electron-updater": "^3.1.1",
     "element-ui": "^2.4.6",
     "source-map-support": "^0.5.9"
   },
@@ -23,7 +24,18 @@
     "vue": "^2.5.17",
     "webpack": "^4.16.5"
   },
+  "release": "build",
   "resolutions": {
     "upath": "^1.0.5"
+  },
+  "build": {
+    "appId": "com.github.iffy.electronupdaterexample",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    }
   }
 }
