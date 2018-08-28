@@ -1,6 +1,6 @@
 "use strict";
 
-import { app, BrowserWindow, Menu, shell } from "electron";
+import { app, BrowserWindow, Menu, shell, autoUpdater } from "electron";
 import * as path from "path";
 import { format as formatUrl } from "url";
 
@@ -8,6 +8,10 @@ const isDevelopment = process.env.NODE_ENV !== "production";
 
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
 let mainWindow;
+
+const server = 'https://hazel-server-cryktzkmcw.now.sh'
+const feed = `${server}/update/${process.platform}/${app.getVersion()}`
+autoUpdater.setFeedURL(feed)
 
 function createMainWindow() {
   const window = new BrowserWindow();
