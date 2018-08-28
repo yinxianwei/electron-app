@@ -62,7 +62,11 @@ app.on("ready", () => {
   const template = [
     {
       label: app.getName(),
-      submenu: [{ label: "关于" }, { type: "separator" }, { label: "退出" }]
+      submenu: [
+        { label: "关于", role: "about" },
+        { type: "separator" },
+        { label: "退出", role: "quit" }
+      ]
     },
     {
       label: "文件",
