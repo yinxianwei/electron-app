@@ -1,9 +1,9 @@
 "use strict";
 
 import { app, BrowserWindow, Menu, shell } from "electron";
-import { autoUpdater } from "electron-updater";
 import * as path from "path";
 import { format as formatUrl } from "url";
+import { checkForUpdates } from "./updater";
 
 const isDevelopment = process.env.NODE_ENV !== "production";
 
@@ -65,6 +65,7 @@ app.on("ready", () => {
       label: app.getName(),
       submenu: [
         { label: "关于", role: "about" },
+        { label: "检查更新...", click: checkForUpdates },
         { type: "separator" },
         { label: "退出", role: "quit" }
       ]
@@ -83,5 +84,4 @@ app.on("ready", () => {
   ];
   const menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
-  autoUpdater.checkForUpdatesAndNotify();
 });

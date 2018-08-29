@@ -10,6 +10,8 @@ $ yarn dev
 
 electron-updater
 
+发布在Github: 
+
 ```json
 // package.json
 "version": "1.0.0",
@@ -30,8 +32,13 @@ app.on("ready", () => {
 获取Github token [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
 
 ```shell
+$ yarn dist
 $ export GH_TOKEN="github token"
-$ npm run publish
+$ yarn publish
 ```
 
 打开github项目的release列表，发布草稿
+
+发布在私有服务器: 
+
+TODO: 

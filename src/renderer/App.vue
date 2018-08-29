@@ -4,7 +4,7 @@
         <img class="test"
              :src="require('@/assets/icon.jpg')"
              alt="">
-        <p>1.0.8</p>
+        <p>1.1.0</p>
     </div>
 </template>
 <script>
