@@ -33,6 +33,7 @@
     "mac": {
       "category": "public.app-category.utilities",
       "target": [
+        "zip",
         "dmg"
       ]
     }
